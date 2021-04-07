@@ -45,4 +45,89 @@ h1 {
     border-radius: 6px;
 }
 
+.recent-games-header {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+h3 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-right: 45px;
+}
+.recent-games-filter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+    font-size: 17px;
+    color: var(--text-color);
+    margin-right: 15px;
+    font-weight: 300;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+a {
+    font-size: 24px;
+    font-weight:  900;
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.checkbox {
+    border: 2px solid #000;
+    margin-right: 25px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 7px;
+    padding-bottom: 7px; 
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 900;
+    background-color: #fff;
+}
+
+.checkbox:last-child {
+    margin-right: 0px;
+}
+
+#lotofacil {
+    border-color: #7F3992;
+    color: #7F3992;
+}
+
+#lotofacil:active {
+    color: #fff;
+    background-color: #7f3992
+}
+
+#mega-sena {
+    border-color: #01AC66;
+    color: #01AC66;
+}
+
+#mega-sena:active {
+    color: #fff;
+    background-color: #01ac66
+}
+
+#lotomania {
+    border-color: #F79C31;
+    color: #F79C31;
+}
+
+#lotomania:active {
+    color: #fff;
+    background-color: #F79C31
+}
