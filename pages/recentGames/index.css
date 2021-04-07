@@ -96,6 +96,10 @@ a {
     font-size: 14px;
     font-weight: 900;
     background-color: #fff;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;
 }
 
 .checkbox:last-child {

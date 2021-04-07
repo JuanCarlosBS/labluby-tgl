@@ -30,6 +30,7 @@ h1 {
     color: var(--text-color)
 }
 
+
 .divider {
     margin-left: -130px;
     display: flex;
@@ -45,4 +46,173 @@ h1 {
     border-radius: 6px;
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 41px;
+}
 
+.game {
+    margin-top:32px;
+    margin-right: 41px;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+b {
+    font-weight: 700;    
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--text-color);
+    margin-top: 34px;
+}
+
+p {
+    font-weight: 300;
+    font-size: 17px;
+    color: var(--text-color);
+    
+}
+
+
+
+.filters {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.checkbox {
+    border: 2px solid #000;
+    margin-right: 25px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 7px;
+    padding-bottom: 7px; 
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 900;
+    background-color: #fff;
+    -webkit-user-select: none;  
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+    user-select: none;
+}
+
+.checkbox:last-child {
+    margin-right: 0px;
+}
+
+#lotofacil {
+    border-color: #7F3992;
+    color: #7F3992;
+}
+
+#lotofacil:active {
+    color: #fff;
+    background-color: #7f3992
+}
+
+#mega-sena {
+    border-color: #01AC66;
+    color: #01AC66;
+}
+
+#mega-sena:active {
+    color: #fff;
+    background-color: #01ac66
+}
+
+#lotomania {
+    border-color: #F79C31;
+    color: #F79C31;
+}
+
+#lotomania:active {
+    color: #fff;
+    background-color: #F79C31
+}
+
+.submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 44px;
+}
+
+.game-buttons button {
+    border-radius: 10px;
+    border: 1px solid #27C383;
+    font-size: 16px;
+    font-weight: 400;
+    color: #27C383;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 24px;
+    padding-right:24px
+}
+
+.add-cart-button button {
+    border-radius: 10px;
+    border: 1px solid #27C383;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 24px;
+    padding-right:24px;
+    background-color: #27C383;
+}
+
+.cart {
+    height: 484px; 
+    width: 317px;
+    background-color: #FFFFFF;
+    border: 0.5px solid #E2E2E2;
+    border-radius:10px;
+    min-width: 317px;
+}
+
+.game-cart {
+    padding-left: 19px;
+    padding-top: 32px;
+    padding-right: 19px;
+    padding-bottom: 47px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;    
+}
+
+.game-cart h3:last-child{
+}
+.item {
+    margin-top: 37px;
+    margin-bottom: 37px;
+    min-height: 207px;
+    height: 207px;
+    max-height: 207px;
+    overflow-y: auto;
+}
+
+
+.button-save {
+    margin-top: 0px;
+    width : 317px;
+    min-height: 96px;
+    background-color: #F4F4F4;
+    border: 1px solid #E2E2E2;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 35px;
+    font-weight: 700px;
+    color: #27C383;
+}
