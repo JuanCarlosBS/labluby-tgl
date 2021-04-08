@@ -10,6 +10,11 @@
     display: flex;
 }
 
+.menu a {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
 .menu h2 {
     font-size: 20px;
     color: var(--text-color);

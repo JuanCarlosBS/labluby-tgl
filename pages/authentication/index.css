@@ -94,7 +94,7 @@ hr {
     border: 1px solid #f7f7f7
 }
 
-form button {
+form .logIn {
     margin-top:15px;;
     background-color: #fff;
     border-color: transparent;
