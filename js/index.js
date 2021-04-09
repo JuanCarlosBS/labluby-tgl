@@ -2,20 +2,12 @@
 
     'use strict';
     var games = []
-    var lotofacil
-    var megaSena
-    var lotomania
     var ajax = new XMLHttpRequest();
     ajax.open('GET', '/json/games.json');
     ajax.send();
     ajax.onreadystatechange = () => {
         if(ajax.status === 200 && ajax.readyState === 4) {
             var data = JSON.parse(ajax.responseText);
-
-            lotofacil = data.types[0]
-            megaSena = data.types[1]
-            lotomania = data.types[2]    
-            console.log(data.types.length)
             data.types.map((item, index) => {
                 games.push(item)
             })
@@ -29,18 +21,17 @@
     var $lotomania = document.getElementById('lotomania');
     var $number ;
 
-    function addNumber() {
-        console.log($number.value)
+    function addNumber(number) {
         for (let i = 0; i < numbers.length; i++) {
-            if (numbers[i] === $number.value)
+            if (numbers[i] === number)
                 return
         }
         if (numbers.length < 6) {
-            numbers.push($number.value)
+            numbers.push(number)
             console.log(numbers)
         } else {
             numbers.shift()
-            numbers.push($number.value)
+            numbers.push(number)
             console.log(numbers)
         }
     }
@@ -59,10 +50,10 @@
             let label = i
             if( label < 10 ) 
                 label = `0${label}`
-            $numbers.innerHTML += `<button class="number" id="${i}" value="${i}">${label}</button>`
+            $numbers.innerHTML += `<button class="number" id="${i}" onclick="addNumber(${i})">${label}</button>`
         }
         $number = document.querySelectorAll('.number');
-        console.log(games)
+        console.log($number)
     }
 
     function clearLabel(param) {
