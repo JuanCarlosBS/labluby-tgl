@@ -99,11 +99,11 @@
             price: games[activeGame].price
         }
         if (param === 'addCart') {
-            console.log(cartobject)
+            
             cart.push(cartobject)
             id += 1
         } else {
-            console.log(numberRemove)
+            
             for (let i = 0; i < cart.length; i++) {
                 if (cart[i].id === numberRemove) {
                     cart[i].disabled = true;
@@ -112,7 +112,6 @@
         }
 
         var $items = document.querySelector('.items')
-        console.log($items)
         clearLabel($items)
         for (let i = 0; i < cart.length; i++) {
             if (cart[i].disabled === false) {
