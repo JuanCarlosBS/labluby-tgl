@@ -69,3 +69,7 @@
         return param.innerHTML = ''
     }
 
+    function addCard() {
+        $items = document.querySelector('.items')
+        $item.innerHTML += `<div class="item"><button>Remove</button><div class="bar" color=${games[activeGame].color}></div><div class="item-content"><p>${numbers}</p><h5>${games[activeGame].type}</h5></div></div>`
+    }

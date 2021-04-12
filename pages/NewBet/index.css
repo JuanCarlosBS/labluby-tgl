@@ -81,8 +81,6 @@ p {
     
 }
 
-
-
 .filters {
     display: flex;
     justify-content:flex-start;
@@ -217,13 +215,51 @@ p {
     justify-content:space-between;    
 }
 
-.item {
+.items {
     margin-top: 37px;
     margin-bottom: 37px;
     min-height: 207px;
     height: 207px;
     max-height: 207px;
     overflow-y: auto;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+img {
+    height: 24px;
+    margin-right: 14px;
+}
+
+.bar {
+    width: 2px;
+    background-color: #7F3992;
+    height: 60px;
+    border: 1px solid #7F3992;
+    border-radius: 10px 0px 0px 10px;
+    margin-right: 12px;
+}
+
+.item-content p {
+    margin-bottom: 6px;
+}
+
+.game-name-price {
+    display:flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.game-name-price h5 {
+    margin-right: 14px;
+}
+
+.game-name-price h6 {
+    font-weight: 300;
 }
 
 
