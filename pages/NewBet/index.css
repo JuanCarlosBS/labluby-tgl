@@ -236,10 +236,8 @@ img {
 }
 
 .bar {
-    width: 2px;
-    background-color: #7F3992;
+    min-width: 2px;
     height: 60px;
-    border: 1px solid #7F3992;
     border-radius: 10px 0px 0px 10px;
     margin-right: 12px;
 }
@@ -261,7 +259,6 @@ img {
 .game-name-price h6 {
     font-weight: 300;
 }
-
 
 .button-save {
     margin-top: 0px;

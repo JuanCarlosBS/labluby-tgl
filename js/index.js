@@ -15,7 +15,9 @@
         }
     }    
     
-    var numbers = []  
+    var numbers = [];
+    var id = 0;
+    var cart = [];
     var activeGame ;
     var $lotofacil = document.getElementById('lotofacil');
     var $megaSena = document.getElementById('mega-sena');
@@ -38,7 +40,7 @@
 
     function completeGame() {
         while (numbers.length < games[activeGame].maxNumber){
-            var number = Math.floor(Math.random() * games[activeGame].maxNumber) + 1
+            var number = Math.floor(Math.random() * games[activeGame].range) + 1
             addNumber(number)
         }
     }
@@ -69,7 +71,45 @@
         return param.innerHTML = ''
     }
 
-    function addCard() {
-        $items = document.querySelector('.items')
-        $item.innerHTML += `<div class="item"><button>Remove</button><div class="bar" color=${games[activeGame].color}></div><div class="item-content"><p>${numbers}</p><h5>${games[activeGame].type}</h5></div></div>`
+    function handleCart(param, numberRemove) {
+        var cartobject = {
+            id: id,
+            numbers: numbers,
+            game: games[activeGame].type,
+            disabled: false,
+            color: games[activeGame].color,
+            price: games[activeGame].price
+        }
+        if (param === 'addCart') {
+            console.log(cartobject)
+            cart.push(cartobject)
+            id += 1
+        } else {
+            console.log(numberRemove)
+            for (let i = 0; i < cart.length; i++) {
+                if (cart[i].id === numberRemove) {
+                    cart[i].disabled = true;
+                }
+            }
+        }
+
+        var $items = document.querySelector('.items')
+        console.log($items)
+        clearLabel($items)
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].disabled === false) {
+                $items.innerHTML += `                        
+                <div class="item">
+                    <img class="remove" "type="button" onclick="handleCart('removeCart', ${cart[i].id})" src="../../assets/delete+remove+trash+trash+bin+trash+can+icon-1320073117929397588.png"/>
+                    <div class="bar" style='background-color:${cart[i].color};' 'border: 2px solid ${cart[i].color};'></div>
+                    <div class="item-content">
+                        <p>${cart[i].numbers}</p>
+                        <div class="game-name-price">
+                            <h5 style='color:${cart[i].color};'}>${cart[i].game}</h5>
+                            <h6>R$ ${cart[i].price}</h6>
+                        </div>
+                    </div>
+                </div>`
+            }
+        }
     }
