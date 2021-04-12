@@ -2,6 +2,7 @@
 
     'use strict';
     var games = []
+    var activeGame ;
     var ajax = new XMLHttpRequest();
     ajax.open('GET', '/json/games.json');
     ajax.send();
@@ -26,7 +27,8 @@
             if (numbers[i] === number)
                 return
         }
-        if (numbers.length < 6) {
+        console.log()
+        if (numbers.length < games[activeGame].maxNumber) {
             numbers.push(number)
             console.log(numbers)
         } else {
@@ -37,6 +39,7 @@
     }
 
     function completeGame() {
+
     }
 
     function handleGames(gameindex) {
@@ -53,7 +56,12 @@
             $numbers.innerHTML += `<button class="number" id="${i}" onclick="addNumber(${i})">${label}</button>`
         }
         $number = document.querySelectorAll('.number');
-        console.log($number)
+        activeGame = gameindex
+    }
+
+    function clearGame() {
+        numbers = []
+        console.log(numbers)
     }
 
     function clearLabel(param) {
