@@ -27,19 +27,20 @@
             if (numbers[i] === number)
                 return
         }
-        console.log()
         if (numbers.length < games[activeGame].maxNumber) {
             numbers.push(number)
-            console.log(numbers)
         } else {
             numbers.shift()
             numbers.push(number)
-            console.log(numbers)
+
         }
     }
 
     function completeGame() {
-
+        while (numbers.length < games[activeGame].maxNumber){
+            var number = Math.floor(Math.random() * games[activeGame].maxNumber) + 1
+            addNumber(number)
+        }
     }
 
     function handleGames(gameindex) {
@@ -57,11 +58,11 @@
         }
         $number = document.querySelectorAll('.number');
         activeGame = gameindex
+        clearGame()
     }
 
     function clearGame() {
         numbers = []
-        console.log(numbers)
     }
 
     function clearLabel(param) {
