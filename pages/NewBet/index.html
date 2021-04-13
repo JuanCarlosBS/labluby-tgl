@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="./index.css">
     <title>TGL</title>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -17,19 +19,23 @@
                 <h2>Sair</h2>
             </div>
         </header>
-        <div><hr class="divider"/><hr class="subline"/></div>
+        <div>
+            <hr class="divider" />
+            <hr class="subline" />
+        </div>
         <div class="content">
             <div class="game">
-                <h3><b>NEW BET</b> FOR MEGA-SENA </h3> 
+                <h3><b>NEW BET</b> FOR MEGA-SENA </h3>
                 <h4>Choose a game</h4>
                 <div class="filters">
-                <div class="checkbox" id="lotofacil" active="checked" onclick="handleGames(0)">Lotofácil</div>
-                <div class="checkbox" id="mega-sena" active="checked" onclick="handleGames(1)">Mega-Sena</div>
-                <div class="checkbox" id="lotomania" active="checked" onclick="handleGames(2)">Lotomania</div>
+                    <div class="checkbox" id="lotofacil" active="checked" onclick="handleGames(0)">Lotofácil</div>
+                    <div class="checkbox" id="mega-sena" active="checked" onclick="handleGames(1)">Mega-Sena</div>
+                    <div class="checkbox" id="lotomania" active="checked" onclick="handleGames(2)">Lotomania</div>
                 </div>
                 <div class="description-game">
                     <h4>Fill your bet</h4>
-                    <p>Mark as many numbers as you want up to a maximum of 50. Win by hitting 15, 16, 17, 18, 19, 20 or none of the 20 numbers drawn.</p>
+                    <p>Mark as many numbers as you want up to a maximum of 50. Win by hitting 15, 16, 17, 18, 19, 20 or
+                        none of the 20 numbers drawn.</p>
                 </div>
                 <div class="numbers">
                 </div>
@@ -48,7 +54,9 @@
                     <h3><b>CART</b></h3>
                     <div class="items">
                     </div>
-                    <h3><b>CART</b> TOTAL:</h3>
+                    <div class="total-cart">
+                        <h3><b>CART</b> TOTAL:</h3>
+                    </div>
                 </div>
                 <button class="button-save">Save ❯</button>
             </div>
@@ -56,4 +64,5 @@
     </div>
     <script src="../../js/index.js"></script>
 </body>
+
 </html>
