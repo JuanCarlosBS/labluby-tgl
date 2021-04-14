@@ -13,6 +13,7 @@
 .menu h2 {
     font-size: 20px;
     color: var(--text-color);
+    cursor: pointer;
 }
 .menu h2:first-child {
     margin-right: 57px;
@@ -103,40 +104,11 @@ p {
     -moz-user-select: none;     
     -ms-user-select: none;      
     user-select: none;
+    cursor: pointer;
 }
 
 .checkbox:last-child {
     margin-right: 0px;
-}
-
-#lotofacil {
-    border-color: #7F3992;
-    color: #7F3992;
-}
-
-#lotofacil:active {
-    color: #fff;
-    background-color: #7f3992
-}
-
-#mega-sena {
-    border-color: #01AC66;
-    color: #01AC66;
-}
-
-#mega-sena:active {
-    color: #fff;
-    background-color: #01ac66
-}
-
-#lotomania {
-    border-color: #F79C31;
-    color: #F79C31;
-}
-
-#lotomania:active {
-    color: #fff;
-    background-color: #F79C31
 }
 
 .numbers {
@@ -156,11 +128,7 @@ p {
     margin-left: 12px;
     font-size:20px;
     font-weight: 700;
-}
-
-.numbers button:active {
-    border: 1px solid #27C383;
-    background-color: #27C383;
+    cursor: pointer;
 }
 
 .submit {
@@ -180,7 +148,8 @@ p {
     padding-top: 17px;
     padding-bottom: 17px;
     padding-left: 24px;
-    padding-right:24px
+    padding-right:24px;
+    cursor: pointer;
 }
 
 .add-cart-button button {
@@ -194,6 +163,7 @@ p {
     padding-left: 24px;
     padding-right:24px;
     background-color: #27C383;
+    cursor: pointer;
 }
 
 .cart {
@@ -233,6 +203,7 @@ p {
 img {
     height: 24px;
     margin-right: 14px;
+    cursor: pointer;
 }
 
 .bar {
@@ -270,4 +241,5 @@ img {
     font-size: 35px;
     font-weight: 700px;
     color: #27C383;
+    cursor: pointer;
 }

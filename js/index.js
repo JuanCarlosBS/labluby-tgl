@@ -29,12 +29,31 @@ function addNumber(number) {
     }
     if (numbers.length < games[activeGame].maxNumber) {
         numbers.push(number)
-    } else {
-        numbers.shift()
-        numbers.push(number)
+        selectNumber()
+    }
+    else {
+        alert("You cannot more numbers")
     }
 }
 
+function selectNumber() {
+    const $numbers = document.querySelector('.numbers')
+    clearLabel($numbers)
+    for (let i = 1; i <= games[activeGame].range; i++) {
+        let isSelected = false;
+        let label = i
+        if (label < 10)
+            label = `0${label}`
+        numbers.map((item) => {
+            if (i === item) {
+                $numbers.innerHTML += `<button class="number" id="${i}" style="background-color: #27C383">${label}</button>`
+                isSelected = true
+            }
+        })
+        if (isSelected === false)
+            $numbers.innerHTML += `<button class="number" id="${i}" onclick="addNumber(${i})">${label}</button>`
+    }
+}
 function completeGame() {
     while (numbers.length < games[activeGame].maxNumber) {
         var number = Math.floor(Math.random() * games[activeGame].range) + 1
@@ -74,6 +93,7 @@ function activeDivGame(game) {
 
 function clearGame() {
     numbers = []
+    selectNumber()
 }
 
 function clearLabel(param) {
@@ -82,6 +102,10 @@ function clearLabel(param) {
 
 function handleCart(param, numberRemove) {
     if (param === 'addCart') {
+        if (numbers.length < games[activeGame].maxNumber) {
+            alert(`You cannot add items having less than ${games[activeGame].maxNumber} numbers`)
+            return
+        }
         var cartobject = {
             id: id,
             numbers: numbers,
@@ -124,7 +148,7 @@ function handleCart(param, numberRemove) {
             `
         }
     }
-    console.log($items)
+
     if ($items.innerHTML == '') {
         $items.innerHTML = `
             <div class="item">
@@ -139,4 +163,9 @@ function handleCart(param, numberRemove) {
     $totalCart.innerHTML += `<h3><b>CART</b> TOTAL: ${cartSum.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>`
 
     return cartSum
+}
+
+function saveCart() {
+    var value = handleCart()
+    alert(`You must pay ${value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`)
 }
