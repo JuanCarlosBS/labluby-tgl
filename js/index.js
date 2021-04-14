@@ -36,6 +36,15 @@ function addNumber(number) {
     }
 }
 
+function removeNumber(number) {
+    numbers.forEach((item, index, obj) => {
+        if (item === number) {
+            obj.splice(index, 1)
+            selectNumber()
+        }
+    })
+}
+
 function selectNumber() {
     const $numbers = document.querySelector('.numbers')
     clearLabel($numbers)
@@ -46,7 +55,7 @@ function selectNumber() {
             label = `0${label}`
         numbers.map((item) => {
             if (i === item) {
-                $numbers.innerHTML += `<button class="number" id="${i}" style="background-color: #27C383">${label}</button>`
+                $numbers.innerHTML += `<button class="number" id="${i}" style="background-color: #27C383" onclick="removeNumber(${i})">${label}</button>`
                 isSelected = true
             }
         })
@@ -78,6 +87,7 @@ function handleGames(gameindex) {
     activeDivGame(activeGame)
     clearGame()
 }
+
 
 function activeDivGame(game) {
     let $filters = document.querySelector('.filters')
