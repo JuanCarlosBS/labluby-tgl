@@ -12,6 +12,7 @@ ajax.onreadystatechange = () => {
         data.types.map((item, index) => {
             games.push(item)
         })
+        activeDivGame()
     }
 }
 
@@ -19,10 +20,6 @@ var numbers = [];
 var id = 0;
 var cart = [];
 var activeGame;
-var $lotofacil = document.getElementById('lotofacil');
-var $megaSena = document.getElementById('mega-sena');
-var $lotomania = document.getElementById('lotomania');
-var $number;
 
 function addNumber(number) {
     for (let i = 0; i < numbers.length; i++) {
@@ -57,7 +54,6 @@ function handleGames(gameindex) {
             label = `0${label}`
         $numbers.innerHTML += `<button class="number" id="${i}" onclick="addNumber(${i})">${label}</button>`
     }
-    $number = document.querySelectorAll('.number');
     activeGame = gameindex
     activeDivGame(activeGame)
     clearGame()
@@ -66,20 +62,15 @@ function handleGames(gameindex) {
 function activeDivGame(game) {
     let $filters = document.querySelector('.filters')
     clearLabel($filters)
-    if (game === 0) {
-        $filters.innerHTML += '<div class="checkbox" id="lotofacil"  style="color: #fff; background-color: #7f3992;"onclick="handleGames(0)">Lotofácil</div>'
-        $filters.innerHTML += '<div class="checkbox" id ="mega-sena" style="color: #01AC66; background-color: #fff;" onclick="handleGames(1)">Mega-Sena</div>'
-        $filters.innerHTML += '<div class="checkbox" id="lotomania" style="color:#F79C31; background-color: #fff"onclick="handleGames(2)">Lotomania</div>'
-    } else if (game === 1) {
-        $filters.innerHTML += '<div class="checkbox" id="lotofacil"  style="color: #7f3992; background-color: #fff;"onclick="handleGames(0)">Lotofácil</div>'
-        $filters.innerHTML += '<div class="checkbox" id ="mega-sena" style="color: #fff; background-color: #01AC66;" onclick="handleGames(1)">Mega-Sena</div>'
-        $filters.innerHTML += '<div class="checkbox" id="lotomania" style="color:#F79C31; background-color: #fff"onclick="handleGames(2)">Lotomania</div>'
-    } else if (game === 2) {
-        $filters.innerHTML += '<div class="checkbox" id="lotofacil"  style="color: #7f3992; background-color: #fff;"onclick="handleGames(0)">Lotofácil</div>'
-        $filters.innerHTML += '<div class="checkbox" id ="mega-sena" style="color: #01AC66; background-color: #fff;" onclick="handleGames(1)">Mega-Sena</div>'
-        $filters.innerHTML += '<div class="checkbox" id="lotomania" style="color:#fff; background-color: #F79C31;"onclick="handleGames(2)">Lotomania</div>'
+    for (let i = 0; i < games.length; i++) {
+        if (i === game) {
+            $filters.innerHTML += `<div class="checkbox" style="color: #FFFFFF; background-color: ${games[i].color}; border-color: ${games[i].color};" onclick="handleGames(${i})">${games[i].type}</div>`
+        } else {
+            $filters.innerHTML += `<div class="checkbox" style="color: ${games[i].color}; background-color: #FFFFFF; border-color: ${games[i].color};" onclick="handleGames(${i})">${games[i].type}</div>`
+        }
     }
 }
+
 function clearGame() {
     numbers = []
 }
@@ -97,9 +88,10 @@ function handleCart(param, numberRemove) {
         color: games[activeGame].color,
         price: games[activeGame].price
     }
-    if (param === 'addCart') {
 
+    if (param === 'addCart') {
         cart.push(cartobject)
+        numbers = []
         id += 1
     } else {
 
