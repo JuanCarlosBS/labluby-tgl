@@ -13,6 +13,7 @@ ajax.onreadystatechange = () => {
             games.push(item)
         })
         activeDivGame()
+        handleCart()
     }
 }
 
@@ -80,21 +81,19 @@ function clearLabel(param) {
 }
 
 function handleCart(param, numberRemove) {
-    var cartobject = {
-        id: id,
-        numbers: numbers,
-        game: games[activeGame].type,
-        disabled: false,
-        color: games[activeGame].color,
-        price: games[activeGame].price
-    }
-
     if (param === 'addCart') {
+        var cartobject = {
+            id: id,
+            numbers: numbers,
+            game: games[activeGame].type,
+            disabled: false,
+            color: games[activeGame].color,
+            price: games[activeGame].price
+        }
         cart.push(cartobject)
         numbers = []
         id += 1
-    } else {
-
+    } else if (param === 'removeCart') {
         for (let i = 0; i < cart.length; i++) {
             if (cart[i].id === numberRemove) {
                 cart[i].disabled = true;
@@ -121,8 +120,23 @@ function handleCart(param, numberRemove) {
                             <h6>${cart[i].price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h6>
                         </div>
                     </div>
-                </div>`
+                </div>
+            `
         }
     }
+    console.log($items)
+    if ($items.innerHTML == '') {
+        $items.innerHTML = `
+            <div class="item">
+            <div class="item-content">
+                <div class="game-name-price">
+                    <h6>Void Cart</h6>
+                </div>
+            </div>
+        `
+    }
+
     $totalCart.innerHTML += `<h3><b>CART</b> TOTAL: ${cartSum.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>`
+
+    return cartSum
 }
