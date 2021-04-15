@@ -11,6 +11,7 @@ ajax.onreadystatechange = () => {
         var data = JSON.parse(ajax.responseText);
         data.types.map((item, index) => {
             games.push(item)
+            console.log(games)
         })
         activeDivGame()
         handleCart()
@@ -91,7 +92,8 @@ function handleGames(gameindex) {
 
 function activeDivGame(game) {
     let $filters = document.querySelector('.filters')
-    clearLabel($filters)
+    clearLabel($filters);
+    console.log('activeDivGame')
     for (let i = 0; i < games.length; i++) {
         if (i === game) {
             $filters.innerHTML += `<div class="checkbox" style="color: #FFFFFF; background-color: ${games[i].color}; border-color: ${games[i].color};" onclick="handleGames(${i})">${games[i].type}</div>`
@@ -158,7 +160,7 @@ function handleCart(param, numberRemove) {
             `
         }
     }
-
+    selectNumber()
     if ($items.innerHTML == '') {
         $items.innerHTML = `
             <div class="item">
@@ -169,9 +171,7 @@ function handleCart(param, numberRemove) {
             </div>
         `
     }
-
     $totalCart.innerHTML += `<h3><b>CART</b> TOTAL: ${cartSum.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>`
-
     return cartSum
 }
 

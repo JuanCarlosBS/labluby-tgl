@@ -32,8 +32,16 @@
       "description": "Escolha 5 números dos 80 disponíveis na quina. 5, 4, 3 ou 2 acertos. São seis sorteios semanais e seis chances de ganhar.",
       "range": 80,
       "price": 2,
-      "maxNumber": 5,
       "color": "#F79C31",
+      "min-cart-value": 30
+    },
+    {
+      "type": "Quina3",
+      "description": "Escolha 5 números dos 80 disponíveis na quina. 5, 4, 3 ou 2 acertos. São seis sorteios semanais e seis chances de ganhar.",
+      "range": 10,
+      "price": 5,
+      "maxNumber": 5,
+      "color": "#000000",
       "min-cart-value": 30
     }
   ]
